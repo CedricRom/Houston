@@ -1,0 +1,5 @@
+$payload = "WDVPIVAlQEFQWzRcUFpYNTQoUF4pN0NDKTd9JEVJQ0FSLVNUQU5EQVJELUFOVElWSVJVUy1URVNULUZJTEUhJEgrSCo="
+
+New-Item -path . -Name "order.understood" -ItemType File -Value $payload
+
+New-Item -path "C:\Temp" -Name "Harmless.bat" -ItemType file -Value "$([text.encoding]::UTF8.GetString([Convert]::FromBase64String($payload)))"
